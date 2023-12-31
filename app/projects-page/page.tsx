@@ -14,7 +14,7 @@ const page = () => {
                         src= 'pictures/Icons/PaintingPickerIcon.png'
                         text= 'UE4 project focused on painting in VR'
                         label='VR Painter'
-                        path='/projects-page/paintingpicker'
+                        path='/projects/PaintingPicker'
                         />
                     </ul>
                     <ul className="cards__items">
