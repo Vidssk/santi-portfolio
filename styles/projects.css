@@ -1,0 +1,171 @@
+.projectPage{
+  padding-top: 65px;
+  background-color: var(--mainColor);
+}
+.architecture_explorer_img, 
+.building_escape_img,
+.bull_cow_img,
+.painting_picker_img, 
+.path_finding_img,
+.renegades_img, 
+.simple_shooter_img, 
+.toon_tanks_img{
+  display: flex;
+  text-align: center;
+  height: 70vh;
+ align-items: center;
+ justify-content: center;
+ font-size: 3rem;
+}
+.building_escape_img {
+  background-image: url('../public/pictures/projects/BuildingEscapePic.png');
+  background-position: center;
+  background-size: cover;
+  overflow: hidden;
+  background-repeat: no-repeat;
+  color: rgb(110, 94, 0);
+  font-size: 100px;
+}
+
+.architecture_explorer_img {
+  
+  background-image: url('../public/pictures/projects/ArchitectureExplorerPic.png');
+  background-position: center;
+  background-size: cover;
+  overflow: hidden;
+  background-repeat: no-repeat;
+  color: #fff;
+  font-size: 100px;
+
+ }
+
+ .simple_shooter_img {
+
+    background-image: url('../public/pictures/projects/SimpleShooterPic.png');
+  background-position: center;
+  background-size: cover;
+  overflow: hidden;
+  background-repeat: no-repeat;
+  color: #fff;
+  font-size: 100px;
+ }
+
+ .renegades_img {
+
+    background-image: url('../public/pictures/Icons/RenegadesLogo.jpeg');
+  background-position: center;
+  background-size: contain;
+  background-color: black;
+  overflow: hidden;
+  background-repeat: no-repeat;
+  color: #fff;
+  font-size: 100px;
+ }
+
+ .painting_picker_img {
+  background-image: url('../public/pictures/projects/VRPainterPic.png');
+  background-position: center;
+  background-size: cover;
+  overflow: hidden;
+  background-repeat: no-repeat;
+  /* background-color: black; */
+  color: green;
+  font-size: 100px;
+ }
+ .path_finding_img {
+
+    background-image: url('../public/pictures/projects/PathfindingPic.png');
+  /* background-color: black; */
+  /* height: fit-content; */
+  background-position: center;
+  background-size:contain;
+  /* background-color: purple; */
+  min-height: 100px;
+
+  background-repeat: no-repeat;
+  color: #fff;
+  font-size: 90px;
+ }
+
+ .toon_tanks_img {
+
+  background-image: url('../public/pictures/projects/ToonTanksPic.png');
+  background-position: center;
+  background-size: cover;
+  overflow: hidden;
+  background-repeat: no-repeat;
+  color: #fff;
+  font-size: 100px;
+ }
+
+
+.aboutProject {
+  background-color: var(--mainColor);
+  color: var(--primaryTextColor);
+  padding-left: 3rem;
+  padding-top:  30px;
+  padding-right: 3rem;
+  padding-bottom: 30px;
+  list-style-position: inside;
+}
+.aboutProject h2 {
+  color: var(--secondaryTextColor);
+  font-size: 40px;
+  text-align: center;
+}
+.aboutProject li{
+  margin: 10px;
+  color: var(--primaryTextColor);
+}
+.aboutProject ul{
+  margin: 10px;
+  /* background-color: red; */
+}
+.projectSubjectList{
+  /* background-color: red; */
+  color: var(--secondaryTextColor);
+  text-align: center;
+  font-size: 30px;
+}
+/* .title {
+  color: var(--primaryTextColor);
+  margin: 30px 100px;
+  font-size: 40px;
+  display: block;
+  border-bottom: 5px solid rgba(0, 0, 0, .7);
+  border-radius: 5px;
+  text-align: left;
+} */
+.projectInfo {
+  padding: 20px;
+  background-color: var(--secondaryColor);
+  color: var(--secondaryTextColor);
+  text-align: center;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); 
+  border: 2px solid rgba(255, 255, 255, 0.039); 
+  border-radius: 10px;
+  
+
+}
+.projectSubjectList {
+  /* list-style-type: none; */
+}
+.infoSection {
+  background-color: var(--thirdColor);
+  margin-top: 20px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  font-size: 15px;
+  text-align: center;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); 
+  border: 2px solid rgba(255, 255, 255, 0.039); 
+  border-radius: 10px;
+  
+}
+.code-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  /* background-color: red; */
+}

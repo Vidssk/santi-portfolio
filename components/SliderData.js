@@ -5,9 +5,10 @@ import ChicagoPhoto from '@public/pictures/aboutSlider/ChicagoPhoto.png';
 //import BeanPhoto from './images/BeanPhoto.png';
 
 export const SliderData = [
-    { image: ChicagoPhoto},
-    { image: ZeroLatencyPhoto },
-    { image: JujutsuCosplay },
+
+    {url: 'http://localhost:3000/pictures/aboutSlider/ChicagoPhoto.png',title: 'Chicago'},
+    {url: 'http://localhost:3000/pictures/aboutSlider/Cosplay.jpg',title: 'Cosplay'},
+
     //{ image: BeanPhoto },
    // { image: SnowPhoto },
 

@@ -1,6 +1,6 @@
 import '@styles/globals.css';
 import Navbar from '@components/Navbar'
-// import Footer from '@components/Footer'
+import Footer from '@components/Footer'
 export const metadata = {
   title: "Santiagos Portfolio",
   description: 'Relentless Software Developer'
@@ -16,7 +16,7 @@ const Rootlayout = ({children,}:{children: React.ReactNode}) => {
         {/* <video src = 'public/videos/video.mp4' autoPlay loop muted /> */}
           {children}
         </main>
-      {/* <Footer /> */}
+      <Footer />
         </div>
       </body>
     </html>

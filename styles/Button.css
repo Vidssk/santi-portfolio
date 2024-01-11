@@ -1,0 +1,17 @@
+.my-button {
+    color: var(--primaryTextColor);
+    /* background-color: red; */
+    font-size:20px;
+    padding: 10px;
+    border: 2px solid var(--primaryTextColor);
+     /* Add a 2px solid border with the same color as the background */
+    border-radius: 15px;
+    transition: .4s linear;
+}
+.my-button:hover {
+    color: var(--mainColor);
+    background-color: var(--secondaryColor);
+    border: 2px solid var(--mainColor); /* Add a 2px solid border with the same color as the background */
+    
+    cursor: pointer;
+}

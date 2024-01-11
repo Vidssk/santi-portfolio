@@ -1,0 +1,73 @@
+.contact-container {
+    background: var(--backColor);
+    min-height: 100vh;
+    padding-top: 100px;
+    width: 100%;
+    /* color: var(--secondaryTextColor); */
+    /* align-items: center; */
+    text-align: center;
+    /* flex-direction: row; */
+    color: var(--primaryTextColor);
+}
+.contact-subscription {
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+}
+.contact-subscription-heading {
+    margin-bottom: 10px;
+    padding-top: 20px;
+    background-color: var(--mainColor);
+    width: 80%;
+    justify-content: center;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); 
+    border: 2px solid rgba(255, 255, 255, 0.039); 
+    border-radius: 10px;
+
+}
+.input-areas {
+    margin-top: 10px;
+    padding: 20px;
+    width: 80%; 
+    background-color: var(--mainColor);
+    /* color: var(--primaryTextColor); */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); 
+    border: 2px solid rgba(255, 255, 255, 0.039); 
+    border-radius: 10px;
+}
+.email-form {
+    /* background-color: red; */
+
+    justify-content: center;
+    
+}
+.input-name {
+    /* color: black; */
+    /* background-color: aqua; */
+    /* text-align: center; */
+    /* background-color: aqua; */
+    /* margin-left: 30px; */
+    padding: 10px;
+    
+}
+.input-field {
+    /* background: var(--backColor); */
+    background-color: var(--secondaryColor);
+    /* color: var(--secondaryTextColor); */
+    opacity: 100%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); 
+    border: 2px solid rgba(255, 255, 255, 0.039); 
+    border-radius: 10px;
+    width: 100%;
+
+}
+.title {
+    font-size: 32px;
+    font-weight: bold;
+}
+.error-message {
+    /* background-color: red; */
+    color: maroon;
+}

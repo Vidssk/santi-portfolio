@@ -1,1 +1,0 @@
-export const VIDEO_PATH = '@public/videos/video.mp4';
