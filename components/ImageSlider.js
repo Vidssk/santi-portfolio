@@ -85,7 +85,7 @@ const ImageSlider = ({slides}) => {
         </div>
       <div
         style={slideStyles}
-      >Hello</div>
+      ></div>
       <div style={rightArrowStyles} onClick={goToNext}>
 
       <FontAwesomeIcon style={{width: '40px',height: 'fit-content'}} icon={faArrowRight} />

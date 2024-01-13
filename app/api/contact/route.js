@@ -17,3 +17,16 @@ export async function GET(request) {
 
     return new Response(JSON.stringify(users));
 }
+// const handler = (req, res) => {
+//     if(req.method == "POST"){
+//         const data = req.body;
+//         if(!values.name || !values.email || !values.message || !values.subject)
+//         {
+//             res.status(400).json({ message: "Bad request"});
+
+//         }
+//     }
+//     // console.log(req.body);
+//     res.status(400).json({ message: "Bad request"});
+// }
+// export default handler;

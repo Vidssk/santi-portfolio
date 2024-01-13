@@ -32,7 +32,7 @@
     padding: 20px;
     width: 80%; 
     background-color: var(--mainColor);
-    /* color: var(--primaryTextColor); */
+    color: var(--primaryTextColor);
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); 
     border: 2px solid rgba(255, 255, 255, 0.039); 
     border-radius: 10px;
@@ -53,7 +53,7 @@
     
 }
 .input-field {
-    /* background: var(--backColor); */
+    background: var(--backColor);
     background-color: var(--secondaryColor);
     /* color: var(--secondaryTextColor); */
     opacity: 100%;
@@ -69,5 +69,6 @@
 }
 .error-message {
     /* background-color: red; */
-    color: maroon;
+    /* color: maroon; */
+    color: rgba(186, 2, 2, 0.842);
 }

@@ -3,7 +3,7 @@ import CardItem from '@components/CardItem.js';
 import '@styles/projects-page.css';
 
 const projects = [
-
+  
   {
     src: 'pictures/Icons/ToonTanksIcon.png',
     text: 'Command a tank to destroy turrets',
@@ -11,16 +11,22 @@ const projects = [
     path: '/projects/ToonTanks',
   },
   {
-    src: 'pictures/Icons/RenegadesLogo.jpeg',
-    text: 'Sword based Hero Game',
-    label: 'Renegade: Kai',
-    path: '/projects/Renegades',
+    src: 'pictures/Icons/PaintingPickerIcon.png',
+    text: 'Painting in VR',
+    label:'VR Painter',
+    path:'/projects/PaintingPicker'
   },
   {
     src: 'pictures/Icons/PathFinding.png',
     text: 'Pathfinding Algorithm Program',
     label: 'Pathfinding Visualizer',
     path: '/projects/pathfindingvisualizer',
+  },
+  {
+    src: 'pictures/Icons/RenegadesLogo.jpeg',
+    text: 'Sword based Hero Game',
+    label: 'Renegade: Kai',
+    path: '/projects/Renegades',
   },
   {
     src: 'pictures/Icons/SimpleShooterIcon.png',
@@ -33,12 +39,6 @@ const projects = [
     text: 'Escape the Building to win',
     label: 'Building Escape',
     path: '/projects/buildingescape',
-  },
-  {
-    src: 'pictures/Icons/PaintingPickerIcon.png',
-    text: 'Painting in VR',
-    label:'VR Painter',
-    path:'/projects/PaintingPicker'
   },
 ];
 
