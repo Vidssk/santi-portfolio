@@ -14,7 +14,7 @@ const ImageSlider = ({slides}) => {
     // alignItems: "center",
     // padding: "20px",
     textAlign:"center",
-    // backgroundColor: "red",
+    // backgroundColor: "whitesmoke",
     borderRadius:'10px',
     // boxsShadow: '0 0 10px rgba(0, 0, 0, 0.5)', 
     // border: '2px solid rgba(255, 255, 255, 0.039)' 
@@ -27,7 +27,7 @@ const ImageSlider = ({slides}) => {
     backgroundPosition: 'center',
     backgroundRepeat: 'no-repeat',
     backgroundImage: `url(${slides[currentIndex].url})`,
-    backgroundSize: "contain",
+    // backgroundSize: "contain",
     backgroundSize: "cover"
     
   };

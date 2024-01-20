@@ -2,7 +2,7 @@
 import React, {useState, useEffect} from 'react'
 import { useRouter } from 'next/navigation';
 import Link from 'next/link';
-import '@styles/Navbar.css'
+import '@utils/Navbar.css'
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars, faTimes } from '@fortawesome/free-solid-svg-icons'
@@ -52,7 +52,7 @@ function Navbar() {
 
                 <div className="navbar-container">
                     <Link href="/" className="navbar-logo" onClick={closeMobileMenu}>
-                         Santiago Hernandez 
+                         SH
                         {/*
                          <img src={SHLogo} alt="Portfolio Logo"/>
                              <FontAwesomeIcon icon={faCoffee}/>*/}
@@ -67,7 +67,7 @@ function Navbar() {
                             </Link>
                         </li>
                         <li className='nav-item'>
-                            <Link href ='/projects-page' className='nav-links' onClick={closeMobileMenu}>
+                            <Link href ='/projects' className='nav-links' onClick={closeMobileMenu}>
                             Projects
                             </Link>
                         </li>

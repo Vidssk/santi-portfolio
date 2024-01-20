@@ -1,5 +1,5 @@
 import '@styles/globals.css';
-import Navbar from '@components/Navbar'
+import Navbar from '@utils/Navbar'
 import Footer from '@components/Footer'
 export const metadata = {
   title: "Santiagos Portfolio",

@@ -1,5 +1,5 @@
 'use client'
-import {Button, Container, FormControl, FormErrorMessage, FormLabel, Heading, Input } from "@chakra-ui/react"
+import {Button, Container, FormControl, FormErrorMessage, FormLabel, Heading, Input, useToast } from "@chakra-ui/react"
 import { Textarea } from "@chakra-ui/react"
 import {sendContactForm} from '../lib/api'
 import '@styles/contact.css'
@@ -14,11 +14,12 @@ const initValues = {
 const initState = {values: initValues};
 
 const page = () => {
+    const toast = useToast();
     const [state, setState] = useState(initState);
     const[touched, setTouched] = useState({});
 
-    const {values} = state;
-    const {isLoading} = state;
+    const {values, isLoading, error} = state;
+
     const onBlur = ({target}) => setTouched((prev) => ({...prev,[target.name]:true}))
 
     const handleChange = ({target}) => setState((prev)=>({
@@ -33,7 +34,25 @@ const page = () => {
             ...prev,
             isLoading:true
         }));
-        await sendContactForm(values);
+        try {
+            await sendContactForm(values);
+            setTouched({});
+            setState(initState);
+            toast({
+                title: "Message sent.",
+                status: "success",
+                duration: 2000,
+                position: "top",
+            })
+            
+        } catch (error) {
+            setState((prev) => ({
+                ...prev,
+                isLoading:false,
+                error: error.message,
+
+            }));
+        }
         
     }
   return (
@@ -41,6 +60,9 @@ const page = () => {
     <section className="contact-subscription">
         <div className='contact-subscription-heading'>
     <h1 className='title'>Contact</h1>
+    {error && (
+        <h2>{error}</h2>
+    )}
         <p>
             "Always find ways to improve"
         </p>
