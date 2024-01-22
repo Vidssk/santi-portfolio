@@ -1,4 +1,4 @@
-import React from 'react'
+
 
 // jsmastery.com/:blogID
 
@@ -18,6 +18,6 @@ import React from 'react'
 //     title: 'Home',
 // }
 //<title> Home </title>
-export const page = () => {
+export const Page = () => {
 
 }
