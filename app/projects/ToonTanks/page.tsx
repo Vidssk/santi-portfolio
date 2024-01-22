@@ -32,7 +32,7 @@ const Page = () => {
         <div className="projectInfo">
         <h2>Project Information</h2>
         <p>3rd-Person Tank game. The objective is to destroy all enemy turrets before 
-          your tank's destroyed.</p>
+          your tank&apos;s destroyed.</p>
         </div>
         <div className="infoSection">
 

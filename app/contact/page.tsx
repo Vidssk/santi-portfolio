@@ -13,7 +13,7 @@ const initValues = {
  };
 const initState = {values: initValues};
 
-const page = () => {
+const Page = () => {
     const toast = useToast();
     const [state, setState] = useState(initState);
     const[touched, setTouched] = useState({});
@@ -64,7 +64,7 @@ const page = () => {
         <h2>{error}</h2>
     )}
         <p>
-            "Always find ways to improve"
+        &quot;Always find ways to improve&quot;
         </p>
         <p>
             Get in touch
@@ -80,7 +80,7 @@ const page = () => {
                     name='name'
                     value={values.name}
                     onChange={handleChange}
-onBlur={onBlur}
+                    onBlur={onBlur}
                     />
                     <FormErrorMessage className="error-message">Required</FormErrorMessage>
                 </FormControl>
@@ -92,7 +92,7 @@ onBlur={onBlur}
                     name='email'
                     value={values.email}
                     onChange={handleChange}
-onBlur={onBlur}
+                    onBlur={onBlur}
                     />
                     <FormErrorMessage className="error-message">Required</FormErrorMessage>
                 </FormControl>
@@ -146,4 +146,4 @@ onBlur={onBlur}
   )
 }
 
-export default page
+export default Page
