@@ -5,30 +5,49 @@ import {sendContactForm} from '../lib/api'
 import '@styles/contact.css'
 import { useState } from "react"
 
-const initValues = {
+interface ContactFormValues {
+    name: string;
+    email: string;
+    subject: string;
+    message: string;
+  }
+  
+  interface ContactFormState {
+    values: ContactFormValues;
+    isLoading: boolean;
+    error: string | null;
+  }
+  
+  const initValues: ContactFormValues = {
     name: "",
     email: "",
     subject: "",
-    message:"",
- };
+    message: "",
+  };
+// const initValues = {
+//     name: "",
+//     email: "",
+//     subject: "",
+//     message:"",
+//  };
 
 const initState = {values: initValues, isLoading: false, error: null};
 
 const Page = () => {
     const toast = useToast();
-    const [state, setState] = useState(initState);
-    const[touched, setTouched] = useState({});
+    const [state, setState] = useState<ContactFormState>(initState);
+    const[touched, setTouched] = useState<Record<string,boolean>>({});
 
     const {values, isLoading, error} = state;
 
-    const onBlur = ({target}: React.FocusEvent<HTMLInputElement>) => setTouched((prev) => ({...prev,[target.name]:true}))
+    const onBlur = (name: string) => () => setTouched((prev) => ({ ...prev, [name]: true }));
 
-    const handleChange = ({ target }: React.ChangeEvent<HTMLInputElement>) => setState((prev)=>({
-        ...prev,
-        values: {
-            ...prev.values,
-            [target.name]: target.value,
-        },
+    const handleChange = (name: string) => (event: React.ChangeEvent<HTMLTextAreaElement>) => setState((prev) => ({
+      ...prev,
+      values: {
+        ...prev.values,
+        [name]: event.target.value,
+      },
     }));
     const onSubmit = async () => {
         setState((prev) => ({
@@ -76,11 +95,10 @@ const Page = () => {
                     <FormLabel className="input-name">Name</FormLabel>
                     <Textarea
                     className="input-field"
-                    type='text'
                     name='name'
                     value={values.name}
-                    onChange={handleChange}
-                    onBlur={onBlur}
+                    onChange={handleChange('name')}
+                    onBlur={onBlur('name')}
                     />
                     <FormErrorMessage className="error-message">Required</FormErrorMessage>
                 </FormControl>
@@ -88,11 +106,10 @@ const Page = () => {
                     <FormLabel className="input-name">Email</FormLabel>
                     <Textarea
                     className="input-field"
-                    type='email'
                     name='email'
                     value={values.email}
-                    onChange={handleChange}
-                    onBlur={onBlur}
+                    onChange={handleChange('email')}
+                    onBlur={onBlur('email')}
                     />
                     <FormErrorMessage className="error-message">Required</FormErrorMessage>
                 </FormControl>
@@ -100,13 +117,12 @@ const Page = () => {
                     <FormLabel className="input-name">Subject</FormLabel>
                     <Textarea
                     className="input-field"
-                    type='text'
                     // errorBorderColor="red"
                     focusBorderColor="red.300"
                     name='subject'
                     value={values.subject}
-                    onChange={handleChange}
-                    onBlur={onBlur}
+                    onChange={handleChange('subject')}
+                    onBlur={onBlur('subject')}
                     />
                     <FormErrorMessage className="error-message">Required</FormErrorMessage>
                 </FormControl>
@@ -114,11 +130,10 @@ const Page = () => {
                     <FormLabel className="input-name">Message</FormLabel>
                     <Textarea
                     className="input-field"
-                    type='text'
                     name='message'
                     value={values.message}
-                    onChange={handleChange}
-                    onBlur={onBlur}
+                    onChange={handleChange('message')}
+                    onBlur={onBlur('message')}
                     />
 
                     <FormErrorMessage className="error-message">Required</FormErrorMessage>
