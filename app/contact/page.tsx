@@ -144,7 +144,6 @@ const Page = () => {
                     backgroundColor="var(--secondaryColor)"
                     padding="10px"
                     borderRadius="10px"
-
                     border= "2px solid rgba(255, 255, 255, 0.039)" 
                     boxShadow= "0 0 10px rgba(0, 0, 0, 0.5)" 
                     color='var(--secondaryTextColor)'
