@@ -11,7 +11,8 @@ const initValues = {
     subject: "",
     message:"",
  };
-const initState = {values: initValues};
+
+const initState = {values: initValues, isLoading: false, error: null};
 
 const Page = () => {
     const toast = useToast();
