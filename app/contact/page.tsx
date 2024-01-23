@@ -21,9 +21,9 @@ const Page = () => {
 
     const {values, isLoading, error} = state;
 
-    const onBlur = ({target}) => setTouched((prev) => ({...prev,[target.name]:true}))
+    const onBlur = ({target}: React.FocusEvent<HTMLInputElement>) => setTouched((prev) => ({...prev,[target.name]:true}))
 
-    const handleChange = ({target}) => setState((prev)=>({
+    const handleChange = ({ target }: React.ChangeEvent<HTMLInputElement>) => setState((prev)=>({
         ...prev,
         values: {
             ...prev.values,
@@ -50,7 +50,6 @@ const Page = () => {
             setState((prev) => ({
                 ...prev,
                 isLoading:false,
-                error: error.message,
 
             }));
         }
