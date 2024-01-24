@@ -15,10 +15,11 @@ body {
 
 .app {
   animation: scroll 150s linear infinite;
-  background: url("https://img.freepik.com/free-photo/abstract-geometric-background-shapes-texture_1194-301824.jpg?w=1380&t=st=1706053741~exp=1706054341~hmac=2c3a37ce781a1de664fe63583d705bd81de749db3c68df23cf352f6b74e3e766");
+  background: url("../public/pictures/starry-night-sky.jpg");
+  /* background: url("https://img.freepik.com/free-photo/abstract-geometric-background-shapes-texture_1194-301824.jpg?w=1380&t=st=1706053741~exp=1706054341~hmac=2c3a37ce781a1de664fe63583d705bd81de749db3c68df23cf352f6b74e3e766"); */
   /* background: url("https://img.freepik.com/free-photo/starry-night-sky_1048-11828.jpg?w=740&t=st=1706053838~exp=1706054438~hmac=dd1c37756613a95dee7083ce287d171e84fae7ec642d5a3b5400c39f15eab4fc"); */
   color: #eee;
-  /* background-size:contain; */
+  background-size:cover;
   height: 100vh;
   /* min-width: 360px; */
   width: 100%;
