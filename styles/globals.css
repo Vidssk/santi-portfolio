@@ -78,6 +78,12 @@ body {
   min-height: 100vh;
   /* padding-top: 10%; */
 }
+.loading-page {
+  height: 100vh;
+  text-align: center;
+  font: 100px;
+  background-color:#0c0d13;
+}
 
 
 .main {
