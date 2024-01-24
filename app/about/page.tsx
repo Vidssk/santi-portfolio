@@ -13,6 +13,11 @@ const hobby = [
 const page = () => {
   return (
     <div className='About-page'>
+    <div className="image-wrapper">
+        {/* <ImageSlider slides={SliderData}/> */}
+        <Image src={portfolioImage} alt='Picture of the author'/>
+
+    </div>
     <div className="about-text-wrapper">
       {/* <h1 className="title">ABOUT ME</h1> */}
       <section className="about-information-text">
@@ -43,11 +48,6 @@ const page = () => {
         </div>
         </div>
       </section>
-    </div>
-    <div className="image-wrapper">
-        {/* <ImageSlider slides={SliderData}/> */}
-        <Image src={portfolioImage} alt='Picture of the author'/>
-
     </div>
   </div>
     // <div className='About-page'>
