@@ -1,6 +1,7 @@
 import '@styles/About.css'
 import ImageSlider from '@components/ImageSlider.js'
 import { SliderData } from '@components/SliderData'
+import portfolioImage from '../../public/pictures/ChicagoPhoto.png'
 import Image from 'next/image';
 const skill = 
 ['C++', 'Unreal Engine', 'Blender', 'Substance Painter', 
@@ -13,7 +14,8 @@ const page = () => {
   return (
     <div className='About-page'>
     <div className="image-wrapper">
-        <ImageSlider slides={SliderData}/>
+        {/* <ImageSlider slides={SliderData}/> */}
+        <Image src={portfolioImage} alt='Picture of the author'/>
 
     </div>
     <div className="about-text-wrapper">

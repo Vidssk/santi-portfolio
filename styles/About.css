@@ -24,15 +24,22 @@
   /* padding-right: 30px; */
   color: var(--secondaryTextColor);
   text-align: center;
+  width: 50%;
   padding-left: 50px;
   padding-right: 50px;
 }
 .image {
 }
 .image-wrapper {
-  padding-right: 50px;
+  margin: auto;
+  margin-left: 20px;
+  margin-right: 20px;
+  width: 50%;
+  border: 3px solid whitesmoke;
+  padding: 10px;
+  /* padding-right: 50px;
   padding-left: 50px;
-  padding-top: 25vh;
+  padding-top: 25vh; */
   /* padding-top: 100px ; */
   /* display: table-cell; */
   /* background-image: url('../public/pictures/aboutSlider/ChicagoPhoto.png'); */
@@ -53,7 +60,7 @@ margin-top: 15vh;
   /* width: 1200px; */
   /* height: 70vh; */
   /* display: flex; */
-  width: 100%;
+  /* width: 100%; */
   /* height: 50vh; */
   /* margin-right: 5%;
   margin-left: 5%; */
@@ -132,7 +139,6 @@ ul {
   
   
   
-  /* background-color: aliceblue; */
 }
 .Skills-wrapper {
   text-align: start;
@@ -227,6 +233,7 @@ ul {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); 
   border: 2px solid rgba(255, 255, 255, 0.039); 
   border-radius: 10px;
+  /* background-color: aliceblue; */
   
 }
 
@@ -261,30 +268,33 @@ ul {
 @media only screen and (max-width: 1024px) {
   .About-page {
     /* flex-direction: column; */
+  
     background-color: var(--backColor);
     min-height: 100vh;
-    /* margin: 0;
-    padding: 0; */
+    margin: 0;
+    padding: 0; 
     /* width: 100%; */
     display: block;
   }
   .image-wrapper {
-    flex-direction: column;
+    /* flex-direction: column; */
     /* height: 50%; */
     /* display: none; */
     /* min-height: 70vh; */
-
+    margin: 0;
     /* background-color: red; */
-    padding-top: 75px;
-    padding-bottom: 60px;
+    /* background-color: red; */
+    /* padding-top: 75px; */
+    /* padding-bottom: 60px;
     padding-left: 0px;
-    padding-right: 0px;
-    margin:0;
-    /* width: 100%; */
+    padding-right: 0px; */
+    /* margin:0; */
+    width: 100%;
   }
   .about-text-wrapper {
     background-color: var(--mainColor);
     /* height: 700px; */
+    width: 100%;
   }
   .information {
     font-size: 20px;
@@ -329,9 +339,7 @@ ul {
     margin: 10px;
     
   }
-  .image-wrapper{
 
-  }
   .image {
     height: 250px; 
     width: fit-content;

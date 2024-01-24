@@ -38,7 +38,7 @@ body {
 
 /* Fallback if the operatring system prefers reduced motion*/
 @media (prefers-reduced-motion) {
-  .wrapper {
+  .hero-container {
     animation: scroll 800s linear infinite;
   }
 }
@@ -47,6 +47,7 @@ body {
   .title {
     font-size: 5rem;
   }
+
 }
 
 * {
