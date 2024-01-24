@@ -13,7 +13,7 @@ body {
   font-family: "Lobster", cursive;
 }
 
-.app {
+.hero-container {
   animation: scroll 150s linear infinite;
   background: url("../public/pictures/starry-night-sky.jpg");
   /* background: url("https://img.freepik.com/free-photo/abstract-geometric-background-shapes-texture_1194-301824.jpg?w=1380&t=st=1706053741~exp=1706054341~hmac=2c3a37ce781a1de664fe63583d705bd81de749db3c68df23cf352f6b74e3e766"); */
