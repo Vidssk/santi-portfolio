@@ -13,7 +13,7 @@ const Rootlayout = ({children,}:{children: React.ReactNode}) => {
         <div className='main'>
       <Navbar />
         <main className='app'>
-        <video src = {require("../public/videos/backgroundVideo.mp4")} autoPlay loop muted />
+        {/* <video src = {require("../public/videos/backgroundVideo.mp4")} autoPlay loop muted /> */}
           {children}
         </main>
       <Footer />
