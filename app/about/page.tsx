@@ -5,9 +5,9 @@ import portfolioImage from '../../public/pictures/ChicagoPhoto.png'
 import Image from 'next/image';
 const skill = 
 ['C++', 'Unreal Engine', 'Blender', 'Substance Painter', 
-'JavaScript', 'React JS', 'Oral Presentations'];
+'NextJs','Python', 'Flask','Java', 'Android Development','DBMS: MySQL', 'Oral Presentations'];
 const hobby = [
-  'Cosplaying','Dancing','Piano','Rock Climbing'
+  'Cosplaying','Dancing','Piano','Rock Climbing','3D Printing'
 ]
 
 const page = () => {
@@ -25,7 +25,7 @@ const page = () => {
           <div className='About-info'>
           <h2>About Me</h2>
           <p>
-            Self-taught Virtual Reality Developer in Houston pursuing an opportunity in XR Development.
+            Software Engineering Student at UTA pursuing an opportunity in Full Stack development.
           </p>
           </div>
         <div className='Abilities'>
@@ -40,7 +40,7 @@ const page = () => {
           <div className='Hobbies-wrapper'>
             <h3>Hobbies</h3>
             <ul className='list'>
-              {['Cosplaying', 'Dancing', 'Piano', 'Rock Climbing', 'CodeWars'].map(hobby => (
+              {hobby.map(hobby => (
                 <li key={hobby}>{hobby}</li>
                 ))}
             </ul>

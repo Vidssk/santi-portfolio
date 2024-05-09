@@ -8,7 +8,8 @@
 .painting_picker_img, 
 .path_finding_img,
 .renegades_img, 
-.simple_shooter_img, 
+.simple_shooter_img,
+.statistics_site_img, 
 .toon_tanks_img{
   display: flex;
   text-align: center;
@@ -35,6 +36,17 @@
   overflow: hidden;
   background-repeat: no-repeat;
   color: #fff;
+  font-size: 100px;
+
+ }
+.statistics_site_img {
+  
+  background-image: url('../public/pictures/projects/StatisticPic.png');
+  background-position: center;
+  color: var(--secondaryTextColor);
+  background-size: cover;
+  overflow: hidden;
+  background-repeat: no-repeat;
   font-size: 100px;
 
  }
