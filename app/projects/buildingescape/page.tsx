@@ -22,7 +22,7 @@ const Page = () => {
   return (
     <div className="projectPage">
       <div className="piture_wrap">
-        <h1 className="building_escape_img"> Architecture Explorer</h1>
+        <h1 className="building_escape_img"> Building Escape</h1>
       </div>
       <section className="aboutProject">
         <div className="projectInfo">
