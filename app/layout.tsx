@@ -16,7 +16,7 @@ const Rootlayout = ({children,}:{children: React.ReactNode}) => {
         {/* <video src = {require("../public/videos/backgroundVideo.mp4")} autoPlay loop muted /> */}
           {children}
         </main>
-      <Footer />
+      <Footer/>
         </div>
       </body>
     </html>
