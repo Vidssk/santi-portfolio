@@ -6,8 +6,8 @@ const HeroContainer = () => {
     <section className="hero-container">
         {/* <video src={require('../public/videos/backgroundVideo.mp4')} autoPlay muted loop className="backgroundVideo" /> */}
         <h1>RELENTLESS</h1>
-        <p>Senior Software Engineering Student</p> 
-        <p>Utilizing Unreal engine for VR and gaming applications.</p>
+        <p>Software Engineer</p> 
+        <p>Converting complexity into simplicity through software engineering.</p>
         {/* <button>Hello World</button> */}
         <MyButton  />
   </section>

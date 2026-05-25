@@ -3,7 +3,18 @@ import CardItem from '@components/CardItem.js';
 import '@styles/projects-page.css';
 
 const projects = [
-  
+  {
+    src: 'pictures/Icons/PaintingPickerIcon.png',
+    text: 'Painting in VR',
+    label: 'VR Painter',
+    path: '/projects/PaintingPicker'
+  },
+  {
+    src: 'pictures/Icons/PaintingPickerIcon.png',
+    text: 'Painting in VR',
+    label: 'VR Painter',
+    path: '/projects/PaintingPicker'
+  },
   {
     src: 'pictures/Icons/statsIcon.jpg',
     text: 'Project Manager of statistics site',
@@ -46,6 +57,7 @@ const projects = [
       label: 'Simple Shooter',
       path: '/projects/simpleshooter',
     },
+
     
   ];
   
@@ -62,9 +74,9 @@ const projects = [
                      <ul className="showcase_card">
                         <CardItem
                           src= 'pictures/Icons/PaintingPickerIcon.png'
-                          text= 'Painting in VR'
-                          label= 'VR Painter'
-                          path= '/projects/PaintingPicker'
+                          text= 'Bracelet Ecommerce Site'
+                          label= 'CyberWear'
+                          path= '/projects/CyberWear'
                           />
                      </ul>
               {projects.map((project, index) => (
