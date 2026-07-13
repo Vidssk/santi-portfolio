@@ -1,6 +1,8 @@
 import '@styles/globals.css';
-import Navbar from '@utils/Navbar'
+import AppShell from '@components/AppShell'
 import Footer from '@components/Footer'
+import { bebas } from '@utils/fonts'
+
 export const metadata = {
   title: "Santiagos Portfolio",
   description: 'Relentless Software Developer'
@@ -11,10 +13,11 @@ const Rootlayout = ({children,}:{children: React.ReactNode}) => {
     <html lang='en'>
       <body>
         <div className='main'>
-      <Navbar />
         <main className='app'>
         {/* <video src = {require("../public/videos/backgroundVideo.mp4")} autoPlay loop muted /> */}
-          {children}
+          <AppShell logoClassName={bebas.className}>
+            {children}
+          </AppShell>
         </main>
       <Footer/>
         </div>
