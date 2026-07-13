@@ -1,4 +1,4 @@
-footer {
+.footer-container {
     background-color: whitesmoke;
     color: var(--secondaryTextColor);
     min-height: 142px;

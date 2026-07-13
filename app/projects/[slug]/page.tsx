@@ -2,7 +2,6 @@ import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGithub } from '@fortawesome/free-brands-svg-icons';
-import { Button } from '@chakra-ui/react';
 import '@styles/projects.css';
 import { getProject, projects } from '../projects';
 
@@ -15,14 +14,14 @@ const ProjectInfoSection: React.FC<ProjectInfoSectionProps> = ({
   title,
   items,
 }) => (
-  <>
-    <h3 className="projectSubjectList">{title}</h3>
-    <ul className="projectInfoList">
+  <div className="project-detail__section">
+    <h3 className="project-detail__section-title">{title}</h3>
+    <ul className="project-detail__list">
       {items.map((item, index) => (
         <li key={index}>{item}</li>
       ))}
     </ul>
-  </>
+  </div>
 );
 
 interface ProjectPageProps {
@@ -44,91 +43,92 @@ const Page = ({ params }: ProjectPageProps) => {
     notFound();
   }
 
+  const heroObjectFit =
+    project.hero.backgroundSize === 'contain' ? 'contain' : 'cover';
+
   return (
-    <div className="projectPage">
-      <div className="piture_wrap">
-        <h1
-          className="project_hero"
-          style={{
-            backgroundImage: `url('${project.hero.image}')`,
-            color: project.hero.textColor ?? '#fff',
-            backgroundSize: project.hero.backgroundSize ?? 'cover',
-            backgroundColor: project.hero.backgroundColor,
-            fontSize: project.hero.fontSize,
-          }}
-        >
-          {project.title}
-        </h1>
-      </div>
-      <section className="aboutProject">
-        <div className="projectInfo">
-          <h2>Project Information</h2>
+    <article className="project-detail">
+      <div className="project-detail__inner">
+        <Link href="/projects" className="project-detail__back">
+          ← All Projects
+        </Link>
+
+        <header className="project-detail__hero">
+          <div
+            className="project-detail__hero-media"
+            style={
+              project.hero.backgroundColor
+                ? { backgroundColor: project.hero.backgroundColor }
+                : undefined
+            }
+          >
+            <img
+              src={project.hero.image}
+              alt={project.title}
+              className="project-detail__hero-img"
+              style={{ objectFit: heroObjectFit }}
+            />
+          </div>
+          <h1 className="project-detail__title">{project.title}</h1>
+        </header>
+
+        <section className="project-detail__intro">
+          <h2 className="project-detail__intro-label">Overview</h2>
           <p>{project.description}</p>
-        </div>
-        <div className="infoSection">
-          {project.notableFeatures && project.notableFeatures.length > 0 && (
-            <ProjectInfoSection
-              title="Notable Features"
-              items={project.notableFeatures}
-            />
-          )}
+        </section>
 
-          {project.lessonsLearned && project.lessonsLearned.length > 0 && (
-            <ProjectInfoSection
-              title="Lessons Learned"
-              items={project.lessonsLearned}
-            />
-          )}
-
-          {project.projectDifficulties &&
-            project.projectDifficulties.length > 0 && (
+        {(project.notableFeatures?.length ||
+          project.lessonsLearned?.length ||
+          project.projectDifficulties?.length) && (
+          <div className="project-detail__sections">
+            {project.notableFeatures && project.notableFeatures.length > 0 && (
               <ProjectInfoSection
-                title="Project Difficulties"
-                items={project.projectDifficulties}
+                title="Notable Features"
+                items={project.notableFeatures}
               />
             )}
 
+            {project.lessonsLearned && project.lessonsLearned.length > 0 && (
+              <ProjectInfoSection
+                title="Lessons Learned"
+                items={project.lessonsLearned}
+              />
+            )}
+
+            {project.projectDifficulties &&
+              project.projectDifficulties.length > 0 && (
+                <ProjectInfoSection
+                  title="Project Difficulties"
+                  items={project.projectDifficulties}
+                />
+              )}
+          </div>
+        )}
+
+        <div className="project-detail__actions">
           {project.websiteUrl && (
-            <Link
-              className="social-icon-link"
+            <a
+              className="project-detail__btn"
+              href={project.websiteUrl}
               target="_blank"
-              aria-label="Website"
-              href={{ pathname: project.websiteUrl }}
+              rel="noopener noreferrer"
             >
-              <Button
-                marginTop="20px"
-                backgroundColor="var(--secondaryColor)"
-                padding="10px"
-                borderRadius="10px"
-                border="2px solid rgba(255, 255, 255, 0.039)"
-                boxShadow="0 0 10px rgba(0, 0, 0, 0.5)"
-                color="var(--secondaryTextColor)"
-              >
-                Website
-              </Button>
-            </Link>
+              View Website
+            </a>
           )}
-        </div>
-        <div className="code-section">
-          <Link
-            className="social-icon-link"
-            href={{ pathname: project.githubUrl }}
+          <a
+            className="project-detail__btn project-detail__btn--ghost"
+            href={project.githubUrl}
             target="_blank"
-            aria-label="GitHub"
+            rel="noopener noreferrer"
+            aria-label="View on GitHub"
           >
-            <FontAwesomeIcon
-              className="github-icon"
-              style={{
-                width: '40px',
-                height: 'fit-content',
-                color: 'white',
-              }}
-              icon={faGithub}
-            />
-          </Link>
+            <FontAwesomeIcon icon={faGithub} className="project-detail__github-icon" />
+            GitHub
+          </a>
         </div>
-      </section>
-    </div>
+      </div>
+    </article>
   );
 };
 
