@@ -1,4 +1,4 @@
-import CardItem from '@components/CardItem.js';
+import Link from 'next/link';
 import '@styles/projects-page.css';
 import { getListedProjects } from './projects';
 
@@ -8,41 +8,59 @@ const Page = () => {
   const regularProjects = listedProjects.filter((project) => !project.featured);
 
   return (
-    <div className="project_cards_container">
-      <div className="cards">
-        <div className="cards_container">
-          <div className="cards__wrapper">
-            {featuredProject && (
-              <ul className="showcase_card">
-                <CardItem
-                  src={featuredProject.card.icon}
-                  text={featuredProject.card.text}
-                  label={featuredProject.card.label}
-                  path={`/projects/${featuredProject.slug}`}
+    <div className="projects-page">
+      <div className="projects-page__inner">
+        <header className="projects-header">
+          <p className="projects-eyebrow">Selected Work</p>
+          <h1 className="projects-title">Projects</h1>
+          <p className="projects-subtitle">
+            A collection of software, games, and experiments built with purpose.
+          </p>
+        </header>
+
+        {featuredProject && (
+          <Link
+            href={`/projects/${featuredProject.slug}`}
+            className="project-card project-card--featured"
+          >
+            <div className="project-card__media">
+              <img
+                src={featuredProject.card.icon}
+                alt={featuredProject.card.label}
+                className="project-card__img"
+              />
+              <span className="project-card__chip">{featuredProject.card.label}</span>
+            </div>
+            <div className="project-card__body">
+              <span className="project-card__tag">Featured</span>
+              <h2 className="project-card__title">{featuredProject.title}</h2>
+              <p className="project-card__text">{featuredProject.card.text}</p>
+              <span className="project-card__cta">View project</span>
+            </div>
+          </Link>
+        )}
+
+        <div className="projects-grid">
+          {regularProjects.map((project) => (
+            <Link
+              key={project.slug}
+              href={`/projects/${project.slug}`}
+              className="project-card"
+            >
+              <div className="project-card__media">
+                <img
+                  src={project.card.icon}
+                  alt={project.card.label}
+                  className="project-card__img"
                 />
-              </ul>
-            )}
-            {regularProjects.map((project, index) => (
-              <ul className="cards__items" key={project.slug}>
-                {index % 2 === 0 && (
-                  <CardItem
-                    src={regularProjects[index].card.icon}
-                    text={regularProjects[index].card.text}
-                    label={regularProjects[index].card.label}
-                    path={`/projects/${regularProjects[index].slug}`}
-                  />
-                )}
-                {index + 1 < regularProjects.length && index % 2 === 0 && (
-                  <CardItem
-                    src={regularProjects[index + 1].card.icon}
-                    text={regularProjects[index + 1].card.text}
-                    label={regularProjects[index + 1].card.label}
-                    path={`/projects/${regularProjects[index + 1].slug}`}
-                  />
-                )}
-              </ul>
-            ))}
-          </div>
+                <span className="project-card__chip">{project.card.label}</span>
+              </div>
+              <div className="project-card__body">
+                <h2 className="project-card__title">{project.title}</h2>
+                <p className="project-card__text">{project.card.text}</p>
+              </div>
+            </Link>
+          ))}
         </div>
       </div>
     </div>
