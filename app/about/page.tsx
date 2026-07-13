@@ -1,97 +1,86 @@
-import '@styles/About.css'
-import ImageSlider from '@components/ImageSlider.js'
-import { SliderData } from '@components/SliderData'
-import portfolioImage from '../../public/pictures/ChicagoPhoto.png'
 import Image from 'next/image';
-const skill = 
-['C++', 'Unreal Engine', 'Blender', 'Substance Painter', 
-'NextJs','Python', 'Flask','Java', 'Android Development','DBMS: MySQL', 'Oral Presentations'];
-const hobby = [
-  'Cosplaying','Dancing','Piano','Rock Climbing','3D Printing'
-]
+import '@styles/About.css';
+import portfolioImage from '@public/pictures/ChicagoPhoto.png';
 
-const page = () => {
+const skills = [
+  'C++',
+  'Unreal Engine',
+  'Blender',
+  'Substance Painter',
+  'Next.js',
+  'Python',
+  'Flask',
+  'Java',
+  'Android Development',
+  'MySQL',
+  'Oral Presentations',
+];
+
+const hobbies = [
+  'Cosplaying',
+  'Dancing',
+  'Piano',
+  'Rock Climbing',
+  '3D Printing',
+];
+
+const Page = () => {
   return (
-    <div className='About-page'>
-    <div className="image-wrapper">
-        {/* <ImageSlider slides={SliderData}/> */}
-        <Image src={portfolioImage} alt='Picture of the author'/>
+    <article className="about-page">
+      <div className="about-page__inner">
+        <header className="about-page__header">
+          <p className="about-page__eyebrow">Get To Know Me</p>
+          <h1 className="about-page__title">About Me</h1>
+        </header>
 
-    </div>
-    <div className="about-text-wrapper">
-      {/* <h1 className="title">ABOUT ME</h1> */}
-      <section className="about-information-text">
-        <div className='About-wrapper'>
-          <div className='About-info'>
-          <h2>About Me</h2>
-          <p>
-            Software Engineering Student at UTA pursuing an opportunity in Full Stack development.
-          </p>
+        <div className="about-page__layout">
+          <div className="about-page__photo">
+            <Image
+              src={portfolioImage}
+              alt="Santiago Hernandez"
+              className="about-page__photo-img"
+              priority
+            />
           </div>
-        <div className='Abilities'>
-          <div className='Skills-wrapper'>
-            <h3>Skills</h3>
-            <ul className='list'>
-              {skill.map(skill => (
-                <li key={skill}>{skill}</li>
-                ))}
-            </ul>
-          </div>
-          <div className='Hobbies-wrapper'>
-            <h3>Hobbies</h3>
-            <ul className='list'>
-              {hobby.map(hobby => (
-                <li key={hobby}>{hobby}</li>
-                ))}
-            </ul>
+
+          <div className="about-page__content">
+            <section className="about-page__bio">
+              <h2 className="about-page__section-title">Who I Am</h2>
+              <p>
+                Software Engineering student at UTA pursuing an opportunity in
+                full-stack development. I love building software that turns
+                complex problems into clean, usable experiences.
+              </p>
+            </section>
+
+            <div className="about-page__cards">
+              <section className="about-page__card">
+                <h3 className="about-page__card-title">Skills</h3>
+                <ul className="about-page__tags">
+                  {skills.map((item) => (
+                    <li key={item} className="about-page__tag">
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              </section>
+
+              <section className="about-page__card">
+                <h3 className="about-page__card-title">Hobbies</h3>
+                <ul className="about-page__tags">
+                  {hobbies.map((item) => (
+                    <li key={item} className="about-page__tag">
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              </section>
+            </div>
           </div>
         </div>
-        </div>
-      </section>
-    </div>
-  </div>
-    // <div className='About-page'>
-    //         <div className="image-wrapper">
-    //             <ImageSlider slides={SliderData}/>
-    //         </div>
-    //         <div className="about-text-wrapper">
-    //                 <h1 className="title">ABOUT ME</h1>
-    //             <section className="about-information-text">
-    //             <section className='About-wrapper'>
-    //             <h2>About Me</h2>
-    //             <p className='information'>
-    //             Self-taught Virtual Reality Developer located in Houston pursuing an opportunity in XR Development.
-    //             </p>
-    //             </section>
-    //             <section className='Abilities'>
-    //             <section className='Skills-wrapper'>
-    //             <h3>Skills</h3>
-    //             <ul className='list'>
-    //                 <li>C++</li>
-    //                 <li>Unreal Engine</li>
-    //                 <li>Blender</li>
-    //                 <li>Substance Painter</li>
-    //                 <li>JavaScript</li>
-    //                 <li>React JS</li>
-    //                 <li>Oral Presentations</li>
-    //             </ul>
-    //             </section>
-    //             <section className='Hobbies-wrapper'>
-    //             <h3>Hobbies</h3>
-    //             <ul className='list'>
-    //                 <li>Cosplaying</li>
-    //                 <li>Dancing</li>
-    //                 <li>Piano</li>
-    //                 <li>Rock Climbing</li>
-    //                 <li>CodeWars</li>
-    //             </ul>
-    //             </section>
-    //             </section>
-    //             </section>
-    //         </div> 
-        
-    // </div>
-  )
-}
+      </div>
+    </article>
+  );
+};
 
-export default page
+export default Page;
