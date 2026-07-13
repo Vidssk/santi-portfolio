@@ -1,173 +1,52 @@
-
 import CardItem from '@components/CardItem.js';
 import '@styles/projects-page.css';
+import { getListedProjects } from './projects';
 
-const projects = [
-  {
-    src: 'pictures/Icons/PaintingPickerIcon.png',
-    text: 'Painting in VR',
-    label: 'VR Painter',
-    path: '/projects/PaintingPicker'
-  },
-  {
-    src: 'pictures/Icons/PaintingPickerIcon.png',
-    text: 'Painting in VR',
-    label: 'VR Painter',
-    path: '/projects/PaintingPicker'
-  },
-  {
-    src: 'pictures/Icons/statsIcon.jpg',
-    text: 'Project Manager of statistics site',
-    label: 'Descriptive Statistics',
-    path: '/projects/descriptiveStatistics',
-  },
-  {
-    src: 'pictures/Icons/ArchitectureExplorerIcon.png',
-    text: 'Explore Different forms of VR Locomotion',
-    label: 'VR Architecture Explorer',
-    path: '/projects/Explorer'
-  },
-  {
-    src: 'pictures/Icons/ToonTanksIcon.png',
-    text: 'Command a tank to destroy turrets',
-    label: 'Toon Tanks',
-    path: '/projects/ToonTanks',
-  },
-  {
-    src: 'pictures/Icons/PathFinding.png',
-    text: 'Pathfinding Algorithm Program',
-    label: 'Pathfinding Visualizer',
-    path: '/projects/pathfindingvisualizer',
-  },
-  // {
-    //   src: 'pictures/Icons/RenegadesLogo.jpeg',
-    //   text: 'Sword based Hero Game',
-    //   label: 'Renegade: Kai',
-    //   path: '/projects/Renegades',
-    // },
-    {
-      src: 'pictures/Icons/BuildingEscapeIcon.png',
-      text: 'Escape the Building to win',
-      label: 'Building Escape',
-      path: '/projects/buildingescape',
-    },
-    {
-      src: 'pictures/Icons/SimpleShooterIcon.png',
-      text: 'Shoot and kill all enemy AI to win',
-      label: 'Simple Shooter',
-      path: '/projects/simpleshooter',
-    },
+const Page = () => {
+  const listedProjects = getListedProjects();
+  const featuredProject = listedProjects.find((project) => project.featured);
+  const regularProjects = listedProjects.filter((project) => !project.featured);
 
-    
-  ];
-  
-  const Page = () => {
-    return (
-      <>
-      <div className="project_cards_container">
-
-        {/* <video src={require('@public/videos/Grey_Plexus_Networking.mp4')} autoPlay muted loop className="backgroundVideo" /> */}
-          {/* <video src={require('@public/videos/video.mp4')} autoPlay muted loop className="backgroundVideo" /> */}
-        <div className="cards">
-          <div className="cards_container">
-            <div className="cards__wrapper">
-                     <ul className="showcase_card">
-                        <CardItem
-                          src= 'pictures/Icons/PaintingPickerIcon.png'
-                          text= 'Bracelet Ecommerce Site'
-                          label= 'CyberWear'
-                          path= '/projects/CyberWear'
-                          />
-                     </ul>
-              {projects.map((project, index) => (
-                <ul className="cards__items" key={index}>
-                  { (index %2 == 0)&&(
-                    <CardItem {...projects[index]} />
-                  )}
-                    {index + 1 < projects.length && (index %2 == 0) && (
-                      <CardItem {...projects[index + 1]} />
-                    )}
-
-                </ul>
-              ))}
-            </div>
+  return (
+    <div className="project_cards_container">
+      <div className="cards">
+        <div className="cards_container">
+          <div className="cards__wrapper">
+            {featuredProject && (
+              <ul className="showcase_card">
+                <CardItem
+                  src={featuredProject.card.icon}
+                  text={featuredProject.card.text}
+                  label={featuredProject.card.label}
+                  path={`/projects/${featuredProject.slug}`}
+                />
+              </ul>
+            )}
+            {regularProjects.map((project, index) => (
+              <ul className="cards__items" key={project.slug}>
+                {index % 2 === 0 && (
+                  <CardItem
+                    src={regularProjects[index].card.icon}
+                    text={regularProjects[index].card.text}
+                    label={regularProjects[index].card.label}
+                    path={`/projects/${regularProjects[index].slug}`}
+                  />
+                )}
+                {index + 1 < regularProjects.length && index % 2 === 0 && (
+                  <CardItem
+                    src={regularProjects[index + 1].card.icon}
+                    text={regularProjects[index + 1].card.text}
+                    label={regularProjects[index + 1].card.label}
+                    path={`/projects/${regularProjects[index + 1].slug}`}
+                  />
+                )}
+              </ul>
+            ))}
           </div>
         </div>
       </div>
-    </>
+    </div>
   );
-}
+};
 
 export default Page;
-
-// import CardItem from '@components/CardItem.js'
-// import '@styles/projects-page.css'
-
-// const page = () => {
-  //   return (
-    //     <div className="project_cards_container">
-    //            {/* <h1 className="title">PROJECTS</h1>   */}    
-    //                 <video src={require('@public/videos/Grey_Plexus_Networking.mp4')} autoPlay muted loop className="backgroundVideo" />
-    
-    //         <div className="cards">
-    //             <div className="cards_container">
-    //                 <div className="cards__wrapper">
-    //                     <ul className="cards__items">
-    //                         <CardItem
-    //                         src= 'pictures/Icons/PaintingPickerIcon.png'
-    //                         text= 'UE4 project focused on painting in VR'
-    //                         label='VR Painter'
-    //                         path='/projects/PaintingPicker'
-    //                         />
-    //                     </ul>
-    //                     <ul className="cards__items">
-    //                         <CardItem
-    //                         src= 'pictures/Icons/ArchitectureExplorerIcon.png'
-    //                         text='Explore Different forms of VR Locomotion'
-    //                         label='VR Architecture Explorer'
-    //                         path='/projects/Explorer'
-    //                         />
-    //                         <CardItem 
-    //                         src= 'pictures/Icons/ToonTanksIcon.png'
-    //                         text='Command a tank to destroy turrets'
-    //                         label='Toon Tanks'
-    //                         path='/projects/ToonTanks'
-    //                         />
-    //                     </ul>
-    //                     <ul className="cards__items">
-    //                         <CardItem 
-    //                         src= 'pictures/Icons/RenegadesLogo.jpeg'
-    //                         text='Sword based Hero Game'
-    //                         label='Renegade: Kai'
-    //                         path='/projects/Renegades'
-    //                         />
-    //                         <CardItem 
-    //                         src= 'pictures/Icons/PathFinding.png'
-    //                         text='Pathfinding Algorithm Program'
-    //                         label='Pathfinding Visualizer'
-    //                         path='/projects/pathfindingvisualizer'
-    //                         />
-    //                     </ul>
-    //                     <ul className="cards__items">
-    //                         <CardItem 
-    //                         src= 'pictures/Icons/SimpleShooterIcon.png'
-    //                         text='Shoot and kill all enemy AI to win'
-    //                         label='Simple Shooter'
-    //                         path='/projects/simpleshooter'
-    //                         />
-    //                         <CardItem 
-    //                         src= 'pictures/Icons/BuildingEscapeIcon.png'
-    //                         text='Escape the Building to win'
-    //                         label='Building Escape'
-    //                         path='/projects/buildingescape'
-    //                         />
-    //                     </ul>
-    
-    //                 </div>
-    //             </div>
-    //         </div>
-    //     </div>
-    //   )
-    // }
-    
-    // export default page
