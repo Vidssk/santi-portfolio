@@ -40,6 +40,7 @@ body {
   --secondaryTextColor: black;
   --fontType: 'Bebas Neue';
   --navbarTextColor: whitesmoke;
+  --navbar-height: 72px;
 
 }
 
@@ -55,7 +56,9 @@ body {
 }
 .app {
   min-height: 100vh;
-  /* padding-top: 10%; */
+  display: flex;
+  flex-direction: column;
+  flex: 1;
 }
 .loading-page {
   height: 100vh;
@@ -68,7 +71,9 @@ body {
 .main {
   /* background-color: blueviolet; */
   flex: 1;
-  /* min-width: 100%; */
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 
   /* equal to footer height*/
 

@@ -1,15 +1,10 @@
 import '@styles/HeroSection.css'
 import HeroContainer from '@components/HeroContainer'
-import Navbar from '@utils/Navbar'
-import { bebas } from '@utils/fonts'
 
 const Home = () => {
 
 return (
-  <div className="home-page">
-    <Navbar logoClassName={bebas.className} overlay />
-    <HeroContainer />
-  </div>
+  <HeroContainer />
 );
 
 }

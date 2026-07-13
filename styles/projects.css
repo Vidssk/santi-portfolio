@@ -1,6 +1,7 @@
 .projectPage{
-  /* padding-top: 65px; */
   background-color: var(--mainColor);
+  flex: 1;
+  width: 100%;
 }
 .architecture_explorer_img, 
 .building_escape_img,

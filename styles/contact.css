@@ -1,8 +1,8 @@
 .contact-container {
     background: var(--backColor);
-    min-height: 100vh;
-    padding-top: 100px;
+    min-height: calc(100vh - var(--navbar-height));
     width: 100%;
+    flex: 1;
     /* color: var(--secondaryTextColor); */
     /* align-items: center; */
     text-align: center;

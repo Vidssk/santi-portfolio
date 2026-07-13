@@ -4,12 +4,12 @@
   /* display:flex; */
   /* background-image: linear-gradient(to bottom, var(--mainColor), var(--secondaryColor)); */
   
-  padding-top: 0px;
   background: var(--backColor);
   width: 100%;
-  min-height: 100vh;
+  min-height: calc(100vh - var(--navbar-height));
   color: var(--primaryTextColor);
   display: flex;
+  flex: 1;
   /* align-items: center; */
   /* text-align: center; */
   

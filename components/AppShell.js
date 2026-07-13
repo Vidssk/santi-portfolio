@@ -7,13 +7,9 @@ export default function AppShell({ children, logoClassName }) {
   const pathname = usePathname();
   const isHome = pathname === '/';
 
-  if (isHome) {
-    return children;
-  }
-
   return (
-    <div className="page-shell">
-      <Navbar logoClassName={logoClassName} />
+    <div className={isHome ? 'home-page' : 'page-shell'}>
+      <Navbar logoClassName={logoClassName} overlay={isHome} />
       {children}
     </div>
   );
