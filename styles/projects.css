@@ -63,6 +63,15 @@
   transition: filter 0.4s ease;
 }
 
+.project-detail__hero-poster {
+  z-index: 1;
+  transition: opacity 0.35s ease, filter 0.4s ease;
+}
+
+.project-detail__hero-video {
+  z-index: 0;
+}
+
 .project-detail__hero-media:hover .project-detail__hero-img,
 .project-detail__hero-media:hover .project-detail__hero-video {
   filter: grayscale(0%);

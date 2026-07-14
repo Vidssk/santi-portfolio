@@ -3,6 +3,7 @@ import { notFound } from 'next/navigation';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGithub } from '@fortawesome/free-brands-svg-icons';
 import '@styles/projects.css';
+import ProjectHeroMedia from '@components/ProjectHeroMedia';
 import { getProject, projects } from '../projects';
 
 interface ProjectInfoSectionProps {
@@ -56,33 +57,13 @@ const Page = ({ params }: ProjectPageProps) => {
         </Link>
 
         <header className="project-detail__hero">
-          <div
-            className="project-detail__hero-media"
-            style={
-              project.hero.backgroundColor
-                ? { backgroundColor: project.hero.backgroundColor }
-                : undefined
-            }
-          >
-            {showVideo ? (
-              <video
-                src={project.hero.video}
-                className="project-detail__hero-video"
-                autoPlay
-                loop
-                muted
-                playsInline
-                style={{ objectFit: heroObjectFit }}
-              />
-            ) : (
-              <img
-                src={project.hero.image}
-                alt={project.title}
-                className="project-detail__hero-img"
-                style={{ objectFit: heroObjectFit }}
-              />
-            )}
-          </div>
+          <ProjectHeroMedia
+            title={project.title}
+            image={project.hero.image}
+            video={showVideo ? project.hero.video : undefined}
+            objectFit={heroObjectFit}
+            backgroundColor={project.hero.backgroundColor}
+          />
           <h1 className="project-detail__title">{project.title}</h1>
         </header>
 
