@@ -50,6 +50,16 @@
   letter-spacing: 0.04em;
 }
 
+.about-page__signature {
+  margin: 0.85rem 0 0;
+  color: var(--secondaryColor);
+  font-size: clamp(1rem, 2.2vw, 1.3rem);
+  font-weight: 400;
+  letter-spacing: 0.02em;
+  line-height: 1.2;
+  opacity: 0.85;
+}
+
 /* Layout */
 .about-page__layout {
   display: grid;

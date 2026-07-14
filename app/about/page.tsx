@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import '@styles/About.css';
 import portfolioImage from '@public/pictures/ChicagoPhoto.png';
+import { lobster } from '@utils/fonts';
 
 const skills = [
   'C++',
@@ -31,6 +32,9 @@ const Page = () => {
         <header className="about-page__header">
           <p className="about-page__eyebrow">Get To Know Me</p>
           <h1 className="about-page__title">About Me</h1>
+          <p className={`about-page__signature ${lobster.className}`}>
+            Santiago Hernandez
+          </p>
         </header>
 
         <div className="about-page__layout">

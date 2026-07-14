@@ -1,37 +1,33 @@
-'use client';
-import React, { useEffect, useId, useRef } from 'react';
-import Link from 'next/link';
-import { usePathname } from 'next/navigation';
-import '@utils/Navbar.css';
+'use client'
+import React, { useEffect, useId, useRef } from 'react'
+import Link from 'next/link'
+import { usePathname } from 'next/navigation'
+import '@utils/Navbar.css'
 
 function Navbar({ logoClassName = '', overlay = false }) {
-  const pathname = usePathname();
-  const checkboxRef = useRef(null);
-  const reactId = useId();
-  const toggleId = `nav-menu-toggle-${reactId.replace(/:/g, '')}`;
+  const pathname = usePathname()
+  const checkboxRef = useRef(null)
+  const reactId = useId()
+  const toggleId = `nav-menu-toggle-${reactId.replace(/:/g, '')}`
 
   useEffect(() => {
     if (checkboxRef.current) {
-      checkboxRef.current.checked = false;
+      checkboxRef.current.checked = false
     }
-  }, [pathname]);
+  }, [pathname])
 
   const closeMobileMenu = () => {
     if (checkboxRef.current) {
-      checkboxRef.current.checked = false;
+      checkboxRef.current.checked = false
     }
-  };
+  }
 
-  const navbarClassName = overlay ? 'navbar navbar--overlay' : 'navbar';
+  const navbarClassName = overlay ? 'navbar navbar--overlay' : 'navbar'
 
   return (
     <nav className={navbarClassName}>
       <div className="navbar-container">
-        <Link
-          href="/"
-          className={`navbar-logo ${logoClassName}`.trim()}
-          onClick={closeMobileMenu}
-        >
+        <Link href="/" className={`navbar-logo ${logoClassName}`.trim()} onClick={closeMobileMenu}>
           SH
         </Link>
 
@@ -54,11 +50,7 @@ function Navbar({ logoClassName = '', overlay = false }) {
             stroke="currentColor"
             strokeWidth="2"
           >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              d="M4 6h16M4 12h16M4 18h16"
-            />
+            <path strokeLinecap="round" strokeLinejoin="round" d="M4 6h16M4 12h16M4 18h16" />
           </svg>
           <svg
             className="menu-toggle-icon menu-toggle-icon--close"
@@ -69,11 +61,7 @@ function Navbar({ logoClassName = '', overlay = false }) {
             stroke="currentColor"
             strokeWidth="2"
           >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              d="M6 18L18 6M6 6l12 12"
-            />
+            <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
           </svg>
         </label>
 
@@ -96,7 +84,7 @@ function Navbar({ logoClassName = '', overlay = false }) {
         </ul>
       </div>
     </nav>
-  );
+  )
 }
 
-export default Navbar;
+export default Navbar
