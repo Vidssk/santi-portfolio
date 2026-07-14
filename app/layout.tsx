@@ -9,12 +9,41 @@ export const metadata = {
 }
 
 const Rootlayout = ({children,}:{children: React.ReactNode}) => {
+  const hydrationRescueScript =
+    process.env.NODE_ENV === 'development'
+      ? `(function(){
+  window.addEventListener('load', function () {
+    setTimeout(function () {
+      var marker = document.querySelector('[data-hydrate-marker]');
+      var hydrated = !!(marker && Object.keys(marker).some(function (k) {
+        return k.indexOf('__reactFiber') === 0;
+      }));
+      if (hydrated) {
+        try { sessionStorage.removeItem('dev-hydration-rescue'); } catch (e) {}
+        return;
+      }
+      try {
+        if (sessionStorage.getItem('dev-hydration-rescue') === '1') return;
+        sessionStorage.setItem('dev-hydration-rescue', '1');
+      } catch (e) { return; }
+      location.reload();
+    }, 1500);
+  });
+})();`
+      : '';
+
   return (
     <html lang='en'>
       <body>
+        {hydrationRescueScript ? (
+          <script
+            dangerouslySetInnerHTML={{
+              __html: hydrationRescueScript,
+            }}
+          />
+        ) : null}
         <div className='main'>
         <main className='app'>
-        {/* <video src = {require("../public/videos/backgroundVideo.mp4")} autoPlay loop muted /> */}
           <AppShell logoClassName={bebas.className}>
             {children}
           </AppShell>

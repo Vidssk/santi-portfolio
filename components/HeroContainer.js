@@ -1,20 +1,22 @@
 'use client';
 
-import React from 'react';
-import dynamic from 'next/dynamic';
+import React, { useEffect, useState } from 'react';
 import { bebas } from '@utils/fonts';
 import MyButton from './MyButton';
-
-const StarfieldScene = dynamic(
-  () => import('@app/portfolio3d/StarfieldScene'),
-  { ssr: false }
-);
+import StarfieldScene from '@components/portfolio3d/StarfieldScene';
 
 const HeroContainer = () => {
+  // Defer WebGL until after hydration so Three.js never runs during SSR.
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
   return (
     <section className="hero-container">
       <div className="hero-background" aria-hidden="true">
-        <StarfieldScene />
+        {mounted ? <StarfieldScene /> : null}
       </div>
       <div className="hero-overlay" aria-hidden="true" />
       <div className="hero-content">

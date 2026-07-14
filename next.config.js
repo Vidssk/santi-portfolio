@@ -1,16 +1,21 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {}
+const nextConfig = {
+  // Avoid a mid-request webpack rebuild invalidating the first client
+  // bundles before React can hydrate (common on cold `next dev` starts).
+  onDemandEntries: {
+    maxInactiveAge: 60 * 1000,
+    pagesBufferLength: 5,
+  },
+  webpack: (config, { dev, isServer }) => {
+    if (dev && !isServer) {
+      // Keep the first compiled client graph stable while the browser hydrates.
+      config.optimization = {
+        ...config.optimization,
+        removeAvailableModules: false,
+        removeEmptyChunks: false,
+      };
+    }
 
-module.exports = nextConfig
-
-// const withVideos = require('next-videos')
-
-// module.exports = withVideos()
-// next.config.js
-const withVideos = require('next-videos');
-
-module.exports = withVideos({
-  webpack: (config) => {
     config.module.rules.push({
       test: /\.(pdf)$/i,
       use: [
@@ -25,4 +30,6 @@ module.exports = withVideos({
 
     return config;
   },
-});
+};
+
+module.exports = nextConfig;

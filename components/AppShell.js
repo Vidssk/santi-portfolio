@@ -8,7 +8,10 @@ export default function AppShell({ children, logoClassName }) {
   const isHome = pathname === '/';
 
   return (
-    <div className={isHome ? 'home-page' : 'page-shell'}>
+    <div
+      className={isHome ? 'home-page' : 'page-shell'}
+      data-hydrate-marker=""
+    >
       <Navbar logoClassName={logoClassName} overlay={isHome} />
       {children}
     </div>
