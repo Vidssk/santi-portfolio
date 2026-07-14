@@ -8,6 +8,8 @@ export interface Project {
   }
   hero: {
     image: string
+    video?: string
+    media?: 'image' | 'video'
     textColor?: string
     backgroundSize?: 'cover' | 'contain'
     backgroundColor?: string
@@ -70,6 +72,7 @@ export const projects: Project[] = [
     },
     hero: {
       image: '/pictures/projects/AcessVR.png',
+      video: '/videos/AccessVRDemo.mp4',
     },
     description:
       'A virtual reality system designed to assist wheelchair users by providing a safe, controlled environment to practice navigation and physical therapy. ',

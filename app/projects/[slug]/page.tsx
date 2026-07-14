@@ -44,7 +44,9 @@ const Page = ({ params }: ProjectPageProps) => {
   }
 
   const heroObjectFit =
-    project.hero.backgroundSize === 'contain' ? 'contain' : 'cover';
+    project.hero.backgroundSize === 'cover' ? 'cover' : 'contain';
+  const showVideo =
+    !!project.hero.video && project.hero.media !== 'image';
 
   return (
     <article className="project-detail">
@@ -62,12 +64,24 @@ const Page = ({ params }: ProjectPageProps) => {
                 : undefined
             }
           >
-            <img
-              src={project.hero.image}
-              alt={project.title}
-              className="project-detail__hero-img"
-              style={{ objectFit: heroObjectFit }}
-            />
+            {showVideo ? (
+              <video
+                src={project.hero.video}
+                className="project-detail__hero-video"
+                autoPlay
+                loop
+                muted
+                playsInline
+                style={{ objectFit: heroObjectFit }}
+              />
+            ) : (
+              <img
+                src={project.hero.image}
+                alt={project.title}
+                className="project-detail__hero-img"
+                style={{ objectFit: heroObjectFit }}
+              />
+            )}
           </div>
           <h1 className="project-detail__title">{project.title}</h1>
         </header>
