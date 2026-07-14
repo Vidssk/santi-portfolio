@@ -1,5 +1,13 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  // Static HTML export for GitHub Pages (next export was removed in Next.js 13+).
+  // Keep this gated so Vercel can still run API routes like /api/contact.
+  ...(process.env.GITHUB_PAGES === 'true'
+    ? {
+        output: 'export',
+        images: { unoptimized: true },
+      }
+    : {}),
   // Avoid a mid-request webpack rebuild invalidating the first client
   // bundles before React can hydrate (common on cold `next dev` starts).
   onDemandEntries: {
