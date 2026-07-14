@@ -47,9 +47,9 @@ const Page = () => {
             <section className="about-page__bio">
               <h2 className="about-page__section-title">Who I Am</h2>
               <p>
-                Software Engineering student at UTA pursuing an opportunity in
-                full-stack development. I love building software that turns
-                complex problems into clean, usable experiences.
+                Software Engineering Graduate from University of Texas at Arlington
+                pursuing a career in software development. 
+                I love building software that turns complex problems into clean, usable experiences.
               </p>
             </section>
 
