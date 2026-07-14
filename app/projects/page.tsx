@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import '@styles/projects-page.css';
+import ProjectCardImage from '@components/ProjectCardImage';
 import { getListedProjects } from './projects';
 
 const Page = () => {
@@ -24,7 +25,7 @@ const Page = () => {
             className="project-card project-card--featured"
           >
             <div className="project-card__media">
-              <img
+              <ProjectCardImage
                 src={featuredProject.card.icon}
                 alt={featuredProject.card.label}
                 className="project-card__img"
@@ -48,7 +49,7 @@ const Page = () => {
               className="project-card"
             >
               <div className="project-card__media">
-                <img
+                <ProjectCardImage
                   src={project.card.icon}
                   alt={project.card.label}
                   className="project-card__img"

@@ -30,7 +30,7 @@ export const projects: Project[] = [
     slug: 'N.O.V.A',
     title: 'N.O.V.A',
     card: {
-      icon: 'pictures/Icons/Nova.png',
+      icon: '/pictures/Icons/Nova.png',
       label: 'N.O.V.A',
       text: 'AI-Assistant',
     },
@@ -66,7 +66,7 @@ export const projects: Project[] = [
     slug: 'AccessVR',
     title: 'AccessVR',
     card: {
-      icon: 'pictures/Icons/AccessVR.png',
+      icon: '/pictures/Icons/AccessVR.png',
       label: 'VR Wheelchair Simulation',
       text: 'Utilizing a wheelchair to navigate virtual environments and obstacles.',
     },
@@ -96,7 +96,7 @@ export const projects: Project[] = [
     slug: 'ASLClassifier',
     title: 'ASL Classifier',
     card: {
-      icon: 'pictures/Icons/ASLClassifier.png',
+      icon: '/pictures/Icons/ASLClassifier.png',
       label: 'ASL Classifier',
       text: 'Using a model trained on ASL hand data for classification. ',
     },
@@ -127,7 +127,7 @@ export const projects: Project[] = [
     slug: 'PaintingPicker',
     title: 'VR Painting',
     card: {
-      icon: 'pictures/Icons/PaintingPickerIcon.png',
+      icon: '/pictures/Icons/PaintingPickerIcon.png',
       label: 'VR Painter',
       text: 'Painting in VR',
     },
@@ -158,7 +158,7 @@ export const projects: Project[] = [
     slug: 'CyberWear',
     title: 'Cyberwear',
     card: {
-      icon: 'pictures/Icons/Cyberwear.png',
+      icon: '/pictures/Icons/Cyberwear.png',
       label: 'Full-Stack E-Commerce Site',
       text: 'E-commerce specialized in selling custom 3d-printed charm bracelets for festivals.',
     },
@@ -188,7 +188,7 @@ export const projects: Project[] = [
     slug: 'descriptiveStatistics',
     title: 'Statistiscs Website',
     card: {
-      icon: 'pictures/Icons/statsIcon.jpg',
+      icon: '/pictures/Icons/statsIcon.jpg',
       label: 'Descriptive Statistics',
       text: 'Project Manager of statistics site',
     },
@@ -216,7 +216,7 @@ export const projects: Project[] = [
     slug: 'Explorer',
     title: 'Architecture Explorer',
     card: {
-      icon: 'pictures/Icons/ArchitectureExplorerIcon.png',
+      icon: '/pictures/Icons/ArchitectureExplorerIcon.png',
       label: 'VR Architecture Explorer',
       text: 'Explore Different forms of VR Locomotion',
     },
@@ -241,7 +241,7 @@ export const projects: Project[] = [
     slug: 'ToonTanks',
     title: 'Toon Tanks',
     card: {
-      icon: 'pictures/Icons/ToonTanksIcon.png',
+      icon: '/pictures/Icons/ToonTanksIcon.png',
       label: 'Toon Tanks',
       text: 'Command a tank to destroy turrets',
     },
@@ -277,7 +277,7 @@ export const projects: Project[] = [
     slug: 'pathfindingvisualizer',
     title: 'Path Finding Visualizer',
     card: {
-      icon: 'pictures/Icons/PathFinding.png',
+      icon: '/pictures/Icons/PathFinding.png',
       label: 'Pathfinding Visualizer',
       text: 'Pathfinding Algorithm Program',
     },
@@ -301,7 +301,7 @@ export const projects: Project[] = [
     slug: 'buildingescape',
     title: 'Building Escape',
     card: {
-      icon: 'pictures/Icons/BuildingEscapeIcon.png',
+      icon: '/pictures/Icons/BuildingEscapeIcon.png',
       label: 'Building Escape',
       text: 'Escape the Building to win',
     },
@@ -319,7 +319,7 @@ export const projects: Project[] = [
     slug: 'simpleshooter',
     title: 'Simple Shooter',
     card: {
-      icon: 'pictures/Icons/SimpleShooterIcon.png',
+      icon: '/pictures/Icons/SimpleShooterIcon.png',
       label: 'Simple Shooter',
       text: 'Shoot and kill all enemy AI to win',
     },
@@ -346,7 +346,7 @@ export const projects: Project[] = [
     slug: 'Renegades',
     title: 'Renegades',
     card: {
-      icon: 'pictures/Icons/RenegadesLogo.jpeg',
+      icon: '/pictures/Icons/RenegadesLogo.jpeg',
       label: 'Renegade: Kai',
       text: 'Sword based Hero Game',
     },
@@ -370,7 +370,7 @@ export const projects: Project[] = [
     slug: 'bashprojects',
     title: 'Bash Projects',
     card: {
-      icon: 'pictures/Icons/statsIcon.jpg',
+      icon: '/pictures/Icons/statsIcon.jpg',
       label: 'Bash Projects',
       text: 'Bash automation scripts',
     },
