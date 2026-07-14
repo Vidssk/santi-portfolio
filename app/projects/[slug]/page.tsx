@@ -130,16 +130,18 @@ const Page = ({ params }: ProjectPageProps) => {
               View Website
             </a>
           )}
-          <a
-            className="project-detail__btn project-detail__btn--ghost"
-            href={project.githubUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="View on GitHub"
-          >
-            <FontAwesomeIcon icon={faGithub} className="project-detail__github-icon" />
-            GitHub
-          </a>
+          {project.githubUrl && (
+            <a
+              className="project-detail__btn project-detail__btn--ghost"
+              href={project.githubUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="View on GitHub"
+            >
+              <FontAwesomeIcon icon={faGithub} className="project-detail__github-icon" />
+              GitHub
+            </a>
+          )}
         </div>
       </div>
     </article>
