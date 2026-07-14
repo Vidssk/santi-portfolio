@@ -1,5 +1,5 @@
 'use client';
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import '@utils/Navbar.css';
 
@@ -37,8 +37,13 @@ function MenuIcon({ open }) {
 
 function Navbar({ logoClassName = '', overlay = false }) {
   const [click, setClick] = useState(false);
+  const [menuReady, setMenuReady] = useState(false);
 
-  const handleClick = () => setClick(!click);
+  useEffect(() => {
+    setMenuReady(true);
+  }, []);
+
+  const handleClick = () => setClick((open) => !open);
   const closeMobileMenu = () => setClick(false);
 
   const navbarClassName = overlay ? 'navbar navbar--overlay' : 'navbar';
@@ -56,8 +61,10 @@ function Navbar({ logoClassName = '', overlay = false }) {
 
         <button
           type="button"
-          className="menu-toggle"
+          className={`menu-toggle${menuReady ? ' menu-toggle--ready' : ''}`}
           onClick={handleClick}
+          disabled={!menuReady}
+          aria-busy={!menuReady}
           aria-label={click ? 'Close main menu' : 'Open main menu'}
           aria-expanded={click}
           aria-controls="nav-menu"
