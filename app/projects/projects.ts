@@ -163,7 +163,7 @@ export const projects: Project[] = [
       text: 'E-commerce specialized in selling custom 3d-printed charm bracelets for festivals.',
     },
     hero: {
-      image: '/pictures/projects/cyberwear.png',
+      image: '/pictures/projects/Cyberwear.png',
       textColor: 'green',
     },
     description: 'E-commerce website that sells 3d-printed charms design in with blender.',
