@@ -32,10 +32,10 @@ export default function ProjectHeroMedia({
   backgroundColor,
 }: ProjectHeroMediaProps) {
   const videoRef = useRef<HTMLVideoElement>(null);
-  const [isPlaying, setIsPlaying] = useState(false);
+  const [showVideo, setShowVideo] = useState(false);
 
   useEffect(() => {
-    setIsPlaying(false);
+    setShowVideo(false);
 
     const el = videoRef.current;
     if (!el || !video) return undefined;
@@ -43,6 +43,7 @@ export default function ProjectHeroMedia({
     let cancelled = false;
     let stallTimer: number | null = null;
     let hardRefreshTimer: number | null = null;
+    let revealRaf = 0;
     let lastBufferedEnd = 0;
     let didInPlaceRestart = false;
 
@@ -67,6 +68,10 @@ export default function ProjectHeroMedia({
     const clearAllTimers = () => {
       clearStallTimer();
       clearHardRefreshTimer();
+      if (revealRaf) {
+        window.cancelAnimationFrame(revealRaf);
+        revealRaf = 0;
+      }
     };
 
     const clearReloadGuard = () => {
@@ -85,25 +90,42 @@ export default function ProjectHeroMedia({
       }
     };
 
+    const revealWhenFrameReady = () => {
+      if (cancelled) return;
+
+      const tick = () => {
+        if (cancelled) return;
+
+        // Wait for a real painted frame so we don't flash a blank/first-frame jump.
+        if (
+          !el.paused &&
+          hasPlayableData(el) &&
+          el.currentTime > 0.1
+        ) {
+          setShowVideo(true);
+          clearAllTimers();
+          clearReloadGuard();
+          return;
+        }
+
+        revealRaf = window.requestAnimationFrame(tick);
+      };
+
+      revealRaf = window.requestAnimationFrame(tick);
+    };
+
     const tryPlay = () => {
       if (cancelled) return;
       const playPromise = el.play();
       if (playPromise !== undefined) {
         playPromise
           .then(() => {
-            if (!cancelled) setIsPlaying(true);
+            if (!cancelled) revealWhenFrameReady();
           })
           .catch(() => {
             // Autoplay may be blocked until more data arrives.
           });
       }
-    };
-
-    const markSuccess = () => {
-      if (cancelled) return;
-      setIsPlaying(true);
-      clearAllTimers();
-      clearReloadGuard();
     };
 
     const onReady = () => {
@@ -114,7 +136,7 @@ export default function ProjectHeroMedia({
     };
 
     const onPlaying = () => {
-      markSuccess();
+      revealWhenFrameReady();
     };
 
     const onProgress = () => {
@@ -148,8 +170,10 @@ export default function ProjectHeroMedia({
       stallTimer = window.setTimeout(() => {
         if (cancelled) return;
 
-        if (hasPlayableData(el) && !el.paused) {
-          markSuccess();
+        if (hasPlayableData(el) && !el.paused && el.currentTime > 0.1) {
+          setShowVideo(true);
+          clearAllTimers();
+          clearReloadGuard();
           return;
         }
 
@@ -157,7 +181,6 @@ export default function ProjectHeroMedia({
         const madeProgress = currentBuffered > lastBufferedEnd + 0.05;
 
         if (madeProgress) {
-          // Healthy download — check again later; do not abort via load().
           armStallCheck();
           tryPlay();
           return;
@@ -170,8 +193,6 @@ export default function ProjectHeroMedia({
           armStallCheck();
           return;
         }
-
-        // Already restarted once and still no progress — hard refresh handles it.
       }, STALL_MS);
     };
 
@@ -192,14 +213,12 @@ export default function ProjectHeroMedia({
     tryPlay();
     armStallCheck();
 
-    // Hard refresh is scheduled once from mount — never reset by stall re-arms.
     hardRefreshTimer = window.setTimeout(() => {
       if (cancelled) return;
-      if (hasPlayableData(el) && !el.paused) {
+      if (hasPlayableData(el) && !el.paused && el.currentTime > 0.1) {
         clearReloadGuard();
         return;
       }
-      // Still buffering a large file with actual progress — skip reload.
       if (bufferedEnd() > 0 || hasPlayableData(el)) {
         tryPlay();
         return;
@@ -229,26 +248,26 @@ export default function ProjectHeroMedia({
         <>
           <img
             src={image}
-            alt=""
-            aria-hidden="true"
+            alt={title}
             className="project-detail__hero-img project-detail__hero-poster"
             style={{
               objectFit,
-              opacity: isPlaying ? 0 : 1,
-              pointerEvents: 'none',
+              opacity: showVideo ? 0 : 1,
+              pointerEvents: showVideo ? 'none' : undefined,
             }}
           />
           <video
             key={video}
             ref={videoRef}
             src={video}
-            className="project-detail__hero-video"
+            className={`project-detail__hero-video${showVideo ? ' project-detail__hero-video--visible' : ''}`}
             autoPlay
             loop
             muted
             playsInline
             preload="auto"
             style={{ objectFit }}
+            aria-hidden={!showVideo}
           />
         </>
       ) : (

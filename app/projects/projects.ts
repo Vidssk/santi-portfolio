@@ -71,7 +71,7 @@ export const projects: Project[] = [
       text: 'Utilizing a wheelchair to navigate virtual environments and obstacles.',
     },
     hero: {
-      image: '/pictures/projects/AcessVR.png',
+      image: '/pictures/projects/AccessVR.png',
       video: '/videos/AccessVRDemo.mp4',
     },
     description:
