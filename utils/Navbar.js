@@ -84,11 +84,6 @@ function Navbar({ logoClassName = '', overlay = false }) {
               About
             </Link>
           </li>
-          <li className="nav-item">
-            <Link href="/contact" className="nav-links" onClick={closeMobileMenu}>
-              Contact
-            </Link>
-          </li>
         </ul>
       </div>
     </nav>

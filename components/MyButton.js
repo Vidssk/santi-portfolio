@@ -1,15 +1,14 @@
-
-
 import React from 'react'
-import "@styles/Button.css"
+import '@styles/Button.css'
 import Resume from '@public/Santiagos_Resume.pdf'
-const link = "https://drive.google.com/file/d/1RVYRMo-cONS5BKceZF7hhVa4iZ1zTtiw/view?usp=sharing";
+const link = 'https://drive.google.com/file/d/1sz_THzgJ_shzkmEmDPUPFjptuiXWNsAE/view?usp=sharing'
 function MyButton() {
   return (
     // <a href={Resume} className="my-resume" download="Santiagos_Resume.pdf"> Download Resume </a>
-    <a href={link}
-    className="my-button" target="_blank" rel="noopener noreferrer" ><button>Download Resume</button></a>
-    )
+    <a href={link} className="my-button" target="_blank" rel="noopener noreferrer">
+      <button>Download Resume</button>
+    </a>
+  )
 }
 
 export default MyButton

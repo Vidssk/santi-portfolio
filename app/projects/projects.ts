@@ -1,65 +1,124 @@
 export interface Project {
-  slug: string;
-  title: string;
+  slug: string
+  title: string
   card: {
-    icon: string;
-    label: string;
-    text: string;
-  };
+    icon: string
+    label: string
+    text: string
+  }
   hero: {
-    image: string;
-    textColor?: string;
-    backgroundSize?: 'cover' | 'contain';
-    backgroundColor?: string;
-    fontSize?: string;
-  };
-  description: string;
-  notableFeatures?: string[];
-  lessonsLearned?: string[];
-  projectDifficulties?: string[];
-  githubUrl: string;
-  websiteUrl?: string;
-  showOnListing?: boolean;
-  featured?: boolean;
+    image: string
+    textColor?: string
+    backgroundSize?: 'cover' | 'contain'
+    backgroundColor?: string
+    fontSize?: string
+  }
+  description: string
+  notableFeatures?: string[]
+  lessonsLearned?: string[]
+  projectDifficulties?: string[]
+  githubUrl?: string
+  websiteUrl?: string
+  showOnListing?: boolean
+  featured?: boolean
 }
 
 export const projects: Project[] = [
   {
-    slug: 'CyberWear',
-    title: 'CyberWear',
+    slug: 'N.O.V.A',
+    title: 'N.O.V.A',
     card: {
-      icon: 'pictures/Icons/PaintingPickerIcon.png',
-      label: 'CyberWear',
-      text: 'Bracelet Ecommerce Site',
+      icon: 'pictures/Icons/Nova.png',
+      label: 'N.O.V.A',
+      text: 'AI-Assistant',
     },
     hero: {
-      image: '/pictures/projects/StatisticPic.png',
+      image: '/pictures/projects/Nova.png',
       textColor: 'var(--secondaryTextColor)',
     },
-    description:
-      'An e-commerce website specializing in 3D printed bracelets, utilizing the power of Next.js for the frontend and Flask for the backend. Integrated with mysql database to manage products, user accounts, and orders.',
+    description: 'Wake-word Intent Driven AI-Assistant capable of running various agents.',
     notableFeatures: [
-      'User Authentication and Authorization',
-      'Product Management System',
-      'Shopping Cart and Checkout Process',
-      'Responsive Design',
+      'Wake Word Detection',
+      'Intent-Driven System',
+      'Mutliple llm models for reasoning dependent on task',
+      'Capable of running various agents based on intent',
       'Admin Dashboard',
     ],
     lessonsLearned: [
       'Full-Stack Development',
-      'Database Management',
-      'API Development',
-      'E-commerce Best Practices',
-      'Team Collaboration',
+      'SQLite',
+      'Prompt Driven Workflows',
+      'AI-Workflows',
+      'Creating Reusable frames with 9-slice technique',
     ],
     projectDifficulties: [
-      'Having enough models to 3D print the bracelets',
-      'Integrating frontend and backend seamlessly',
-      'Ensuring data security and user privacy',
-      'deciding on the payment api to use',
+      'Sending data Through websockets',
+      'Scaling the frame accurately to be a reusable component.',
+      'optimizing for low latency with text-to speech',
     ],
-    githubUrl: 'https://github.com/Vidssk/CyberWear',
+    githubUrl: 'https://github.com/Vidssk/AI-Assistant',
+    websiteUrl: 'https://sh-project-nova.vercel.app',
     featured: true,
+  },
+  {
+    slug: 'AccessVR',
+    title: 'AccessVR',
+    card: {
+      icon: 'pictures/Icons/AccessVR.png',
+      label: 'VR Wheelchair Simulation',
+      text: 'Utilizing a wheelchair to navigate virtual environments and obstacles.',
+    },
+    hero: {
+      image: '/pictures/projects/AcessVR.png',
+    },
+    description:
+      'A virtual reality system designed to assist wheelchair users by providing a safe, controlled environment to practice navigation and physical therapy. ',
+    notableFeatures: [
+      'Physical Wheelchair used for Navigation.',
+      '3D models: Made utilizing Blender.',
+      'Users being able to navigate up and down stairs with the wheelchair.',
+    ],
+    lessonsLearned: [
+      'Integrating Hardware with Unreal Engine',
+      'How to handle VR Collisions.',
+      'Building Environments tailored for specific goals.',
+      'Working togethere with hardware and software engineers to accomplish a goal.',
+    ],
+    projectDifficulties: [
+      'Collisions in unreal engine, especially with VR were hard to debug.',
+      'Finding a time that works with all team members for meetings.',
+    ],
+  },
+  {
+    slug: 'ASLClassifier',
+    title: 'ASL Classifier',
+    card: {
+      icon: 'pictures/Icons/ASLClassifier.png',
+      label: 'ASL Classifier',
+      text: 'Using a model trained on ASL hand data for classification. ',
+    },
+    hero: {
+      image: '/pictures/projects/ASLClassifier.png',
+      textColor: 'green',
+    },
+    description:
+      'ASL video translator created from a model trained in a neural network to classify the 26 letters of the asl alphabet.',
+    notableFeatures: [
+      'System can gather, train, and use hand data for a classification model to be used in applications.',
+      'Applied model to a live feed program to test the live classification of the asl language through hand gestures.',
+      'preprocessed hand data to give the neural network better hand data to work with.',
+    ],
+    lessonsLearned: [
+      'How to build Machine Learning pipelines for classification.',
+      'Learned how the quantity and quality of data can affect the quality of the trained model.',
+      'Learned of hybrid approaches for better machine learning models like user calibration for higher accuracy.',
+      'Learned how to make programs to automate the pipeline process to improve upon models or use those models in other applications.',
+    ],
+    projectDifficulties: [
+      'Gathering the right quantity and quality of hand-data to decrease the false positives.',
+      'Letters that require motion would need a frame to capture that movement for classification.',
+    ],
+    showOnListing: false,
   },
   {
     slug: 'PaintingPicker',
@@ -93,6 +152,36 @@ export const projects: Project[] = [
     githubUrl: 'https://github.com/Vidssk/LightPainter',
   },
   {
+    slug: 'CyberWear',
+    title: 'Cyberwear',
+    card: {
+      icon: 'pictures/Icons/Cyberwear.png',
+      label: 'Full-Stack E-Commerce Site',
+      text: 'E-commerce specialized in selling custom 3d-printed charm bracelets for festivals.',
+    },
+    hero: {
+      image: '/pictures/projects/cyberwear.png',
+      textColor: 'green',
+    },
+    description: 'E-commerce website that sells 3d-printed charms design in with blender.',
+    notableFeatures: [
+      'MySQL Backend for database schema implementation.',
+      '3D models: Made utilizing Blender.',
+      'Next.js Front-end for selling merchandise.',
+    ],
+    lessonsLearned: [
+      'How to build backend guided by a schema.',
+      'SVG Logo creation.',
+      'How e-commerce webstited are generally built.',
+      'How to create charms from scratch.',
+    ],
+    projectDifficulties: [
+      'Making enough Charms to sell on the website prior to launch',
+      'Making the charms with minimal color pallete to ensure not too much time was spent in the painting process.',
+      'Making sure authentication is secure.',
+    ],
+  },
+  {
     slug: 'descriptiveStatistics',
     title: 'Statistiscs Website',
     card: {
@@ -119,8 +208,6 @@ export const projects: Project[] = [
     ],
     projectDifficulties: ['Some team mates lacked communication.'],
     githubUrl: 'https://github.com/Vidssk/Project3.git',
-    websiteUrl:
-      'https://statisticssite-ispmj5vhg-vidssks-projects.vercel.app/',
   },
   {
     slug: 'Explorer',
@@ -136,9 +223,7 @@ export const projects: Project[] = [
     },
     description:
       'Virtual Reality Locomotion Demo built using Unreal Engine. You can use various forms of locomotion to explore this map.',
-    notableFeatures: [
-      'Locomotion: Teleportation, climbing, walking, and blinkers.',
-    ],
+    notableFeatures: ['Locomotion: Teleportation, climbing, walking, and blinkers.'],
     lessonsLearned: [
       'Motion Sickness in VR.',
       'Collisions in VR.',
@@ -183,6 +268,7 @@ export const projects: Project[] = [
       "Creating unique ID's for each save slot.",
     ],
     githubUrl: 'https://github.com/Vidssk/ToonTanks.git',
+    showOnListing: false,
   },
   {
     slug: 'pathfindingvisualizer',
@@ -198,17 +284,14 @@ export const projects: Project[] = [
       backgroundSize: 'contain',
       fontSize: '90px',
     },
-    description:
-      'Creates a graph that calculates the shortest route between two points.',
+    description: 'Creates a graph that calculates the shortest route between two points.',
     notableFeatures: [
       'Pathfinding Visualizer is a React based web application.',
       'Pathfinding Algorithm: A*Star.',
       'Walls: block out nodes.',
     ],
     lessonsLearned: ['Animating a graph based utilizing React and CSS.'],
-    projectDifficulties: [
-      'Resizing node graph to take into account different screen sizes.',
-    ],
+    projectDifficulties: ['Resizing node graph to take into account different screen sizes.'],
     githubUrl: 'https://github.com/Vidssk/Pathfind_Visualizer',
   },
   {
@@ -223,11 +306,11 @@ export const projects: Project[] = [
       image: '/pictures/projects/BuildingEscapePic.png',
       textColor: 'rgb(110, 94, 0)',
     },
-    description:
-      'Building Escape is a first person escape room game built using Unreal Engine.',
+    description: 'Building Escape is a first person escape room game built using Unreal Engine.',
     lessonsLearned: ['Utilizing Trigger Volumes.'],
     projectDifficulties: ['VR Headset movement causing collider problems.'],
     githubUrl: 'https://github.com/Vidssk/BuildingEscapeGame.git',
+    showOnListing: false,
   },
   {
     slug: 'simpleshooter',
@@ -252,10 +335,9 @@ export const projects: Project[] = [
       'Spawning Particle Effects.',
       'Using Behaviour Trees to create smart AI.',
     ],
-    projectDifficulties: [
-      'Figuring out how Behaviour Trees and Blackboards worked.',
-    ],
+    projectDifficulties: ['Figuring out how Behaviour Trees and Blackboards worked.'],
     githubUrl: 'https://github.com/Vidssk/SimpleShoter.git',
+    showOnListing: false,
   },
   {
     slug: 'Renegades',
@@ -271,16 +353,13 @@ export const projects: Project[] = [
       backgroundSize: 'contain',
       backgroundColor: 'black',
     },
-    description:
-      'Virtual Reality Sword fighting game built using Unreal Engine.',
+    description: 'Virtual Reality Sword fighting game built using Unreal Engine.',
     notableFeatures: [
       'Survival Game Mode (currently programming).',
       'Katana weapon made from Blender and Substance Painter.',
     ],
     lessonsLearned: ['3D game Asset Workflow.'],
-    projectDifficulties: [
-      'Utilizing Inverse Kinematics for VR body rigging.',
-    ],
+    projectDifficulties: ['Utilizing Inverse Kinematics for VR body rigging.'],
     githubUrl: 'https://github.com/Vidssk/RenegadeKai',
     showOnListing: false,
   },
@@ -312,19 +391,16 @@ export const projects: Project[] = [
       'Error Handling in Scripts',
       'Optimizing Script Performance',
     ],
-    projectDifficulties: [
-      'Debugging complex scripts',
-      'Handling user input and errors gracefully',
-    ],
+    projectDifficulties: ['Debugging complex scripts', 'Handling user input and errors gracefully'],
     githubUrl: 'https://github.com/Vidssk/CyberWear',
     showOnListing: false,
   },
-];
+]
 
 export function getProject(slug: string): Project | undefined {
-  return projects.find((project) => project.slug === slug);
+  return projects.find((project) => project.slug === slug)
 }
 
 export function getListedProjects(): Project[] {
-  return projects.filter((project) => project.showOnListing !== false);
+  return projects.filter((project) => project.showOnListing !== false)
 }
