@@ -36,6 +36,7 @@ export const projects: Project[] = [
     },
     hero: {
       image: '/pictures/projects/Nova.png',
+      video: '/videos/NOVA_Mark1.mp4',
       textColor: 'var(--secondaryTextColor)',
     },
     description: 'Wake-word Intent Driven AI-Assistant capable of running various agents.',
